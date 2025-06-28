@@ -6,7 +6,15 @@ import micropython
 
 from vga_driver import TinyVgaDriver
 
+from ir_rx.nec import NEC_8
 
+def ir_callback(data, addr, ctrl):
+    if data < 0:
+        pass
+    else:
+        print(data)
+
+ir = NEC_8(1, ir_callback)
 
 
 
